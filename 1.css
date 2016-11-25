@@ -1,24 +1,27 @@
-div.header{
+div.header {
     color: #000;
-    background-color:aliceblue;
-    font: 13px/60px Arial,sans-serif;
+    background-color: aliceblue;
+    font: 13px/60px Arial, sans-serif;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     text-align: center;
 }
-div.footer{
+
+div.footer {
     color: #000;
-    background-color:aliceblue;
-    font: 13px/40px Arial,sans-serif;
+    background-color: aliceblue;
+    font: 13px/40px Arial, sans-serif;
     right: 0;
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
 }
-img.logo{float: left;
+
+img.logo {
+    float: left;
     width: 182px;
     height: 35px;
     margin-top: 14px;
@@ -26,6 +29,8 @@ img.logo{float: left;
     background-size: 182px 35px;
     background-position: left
 }
-a{text-decoration:none;
-   color:#8C54AD;
+
+a {
+    text-decoration: none;
+    color: #8C54AD;
 }

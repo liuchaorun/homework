@@ -8,6 +8,16 @@ div.header {
     width: 100%;
     text-align: center;
 }
+div.signinheader{
+    color: #000;
+    background-color: aliceblue;
+    font: 13px/50px Arial, sans-serif;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
 
 div.footer {
     color: #000;
@@ -67,4 +77,20 @@ iframe.body{
 a {
     text-decoration: none;
     color: #8C54AD;
+}
+a.switch1{
+    color: #999;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    outline: 0;
+    float: left;
+}
+a.switch2{
+    color: #333;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    outline: 0;
+    float: right;
 }

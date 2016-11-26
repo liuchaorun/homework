@@ -103,3 +103,10 @@ a.switch2 {
     margin-right: 50px;
     font-size: 15px;
 }
+input.inputstyle{
+    top: 45px;
+    padding: 10px 40px 10px 10px;
+    left: 0px;
+    border-radius: 3px;
+    width: 232px;
+}

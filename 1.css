@@ -8,15 +8,17 @@ div.header {
     width: 100%;
     text-align: center;
 }
-div.signinheader{
+
+div.aaa{
     color: #000;
     background-color: aliceblue;
-    font: 13px/50px Arial, sans-serif;
+    font: 13px/45px Arial, sans-serif;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     text-align: center;
+    height: 45px;
 }
 
 div.footer {
@@ -63,7 +65,8 @@ img.body {
     margin-left: 150px;
     margin-top: 150px;
 }
-iframe.body{
+
+iframe.body {
     float: right;
     border: 1px solid #a0b1c4;
     background-color: #fff;
@@ -78,19 +81,25 @@ a {
     text-decoration: none;
     color: #8C54AD;
 }
-a.switch1{
+
+a.switch1 {
     color: #999;
     display: inline-block;
     height: 45px;
     line-height: 45px;
     outline: 0;
     float: left;
+    margin-left: 50px;
+    font-size: 15px;
 }
-a.switch2{
+
+a.switch2 {
     color: #333;
     display: inline-block;
     height: 45px;
     line-height: 45px;
     outline: 0;
     float: right;
+    margin-right: 50px;
+    font-size: 15px;
 }

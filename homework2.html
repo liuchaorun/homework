@@ -8,45 +8,93 @@
 <body>
 <div class="body">
     <div class="screen" >
-        <textarea name="output" id="1" class="output" readonly="readonly"></textarea>
+        <textarea name="output" id="t" class="output" readonly="readoely" style="font-size: 15px"></textarea>
     </div>
     <div class="table-c" style="top:270px;position:absolute;" >
         <table border="0" width="300px" height="270px" cellspacing="0" cellpadding="0">
             <tr>
-                <td>AC</td>
-                <td>退格</td>
-                <td>÷</td>
-                <td>×</td>
+                <td onclick="clear()">AC</td>
+                <td onclick="deleteOne">退格</td>
+                <td onclick="mathOperation(3)">÷</td>
+                <td onclick="mathOperation(2)">×</td>
             </tr>
             <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>－</td>
+                <td onclick="mathNumber(7)">7</td>
+                <td onclick="mathNumber(8)">8</td>
+                <td onclick="mathNumber(9)">9</td>
+                <td onclick="mathOperation(1)">－</td>
             </tr>
             <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>＋</td>
+                <td onclick="mathNumber(4)">4</td>
+                <td onclick="mathNumber(5)">5</td>
+                <td onclick="mathNumber(6)">6</td>
+                <td onclick="mathOperation(0)">＋</td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td rowspan="2">=</td>
+                <td onclick="mathNumber(1)">1</td>
+                <td onclick="mathNumber(2)">2</td>
+                <td onclick="mathNumber(3)">3</td>
+                <td rowspan="2" onclick="result()">=</td>
             </tr>
             <tr>
-                <td colspan="2">0</td>
-                <td>.</td>
+                <td colspan="2" onclick="mathNumber(0)">0</td>
+                <td onclick="decimal()">.</td>
 
             </tr>
         </table>
     </div>
 </div>
 <script>
-    var number1,number2,sum;
-
+    var number1,number2,n,sum,counter=0,number=new Array(100),way,i;
+    function mathNumber(n) {
+        var text=document.getElementById("t").value;
+        switch (n){
+            case 0:text+="0";number[counter]=0;break;
+            case 1:text+="1";number[counter]=1;break;
+            case 2:text+="2";number[counter]=2;break;
+            case 3:text+="3";number[counter]=3;break;
+            case 4:text+="4";number[counter]=4;break;
+            case 5:text+="5";number[counter]=5;break;
+            case 6:text+="6";number[counter]=6;break;
+            case 7:text+="7";number[counter]=7;break;
+            case 8:text+="8";number[counter]=8;break;
+            case 9:text+="9";number[counter]=9;break;
+        }
+        document.getElementById("t").value=text;
+        ++counter;
+    }
+    function mathOperation(n) {
+        number1=0;
+        counter--;
+        i=counter;
+        for(counter;counter>=0;counter--) number1+=number[counter]*Math.pow(10,i-counter);
+        counter++;
+        var text=document.getElementById("t").value;
+        switch (n){
+            case 0:text+="＋";way=0;break;
+            case 1:text+="－";way=1;break;
+            case 2:text+="×";way=2;break;
+            case 3:text+="÷";way=3;break;
+        }
+        document.getElementById("t").value=text;
+    }
+    function result() {
+        number2=0;
+        counter--;
+        i=counter;
+        for(counter;counter>=0;counter--) number2+=number[counter]*Math.pow(10,i-counter);
+        counter++;
+        var text=document.getElementById("t").value;
+        text+="=";
+        switch (way){
+            case 0:sum=number1+number2;text+=sum.toString();break;
+            case 1:sum=number1-number2;text+=sum.toString();break;
+            case 2:sum=number1*number2;text+=sum.toString();break;
+            case 3:sum=number1/number2;text+=sum.toString();break;
+        }
+        text+="\n";
+        document.getElementById("t").value=text;
+    }
 </script>
 </body>
 </html>

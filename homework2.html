@@ -14,7 +14,7 @@
         <table border="0" width="300px" height="270px" cellspacing="0" cellpadding="0">
             <tr>
                 <td onclick="reClear()">AC</td>
-                <td onclick="deleteOne">退格</td>
+                <td onclick="deleteOne()">退格</td>
                 <td onclick="mathOperation(3)">÷</td>
                 <td onclick="mathOperation(2)">×</td>
             </tr>
@@ -45,7 +45,7 @@
     </div>
 </div>
 <script>
-    var number1,number2,n,sum,counter=0,number=new Array(100),way,i;
+    var number1=0,number2=0,n,sum,counter=0,number=new Array(100),y,way,i,dNumber=0,flag=0,x=0;
     function mathNumber(n) {
         var text=document.getElementById("t").value;
         switch (n){
@@ -67,8 +67,17 @@
         number1=0;
         counter--;
         i=counter;
-        for(counter;counter>=0;counter--) number1+=number[counter]*Math.pow(10,i-counter);
-        counter++;
+        x=dNumber;
+        if(dNumber==0||dNumber>i){
+            for(;counter>=0;counter--) number1+=number[counter]*Math.pow(10,i-counter);
+            counter++;
+        }
+        else{
+            for(;counter>=0;counter--) number1+=number[counter]*Math.pow(10,i-counter);
+            counter++;
+            for(y=0;y<i-dNumber+1;y++) number1/=10;
+            dNumber=0;
+        }
         var text=document.getElementById("t").value;
         switch (n){
             case 0:text+="＋";way=0;break;
@@ -77,13 +86,22 @@
             case 3:text+="÷";way=3;break;
         }
         document.getElementById("t").value=text;
+        flag=1;
     }
     function result() {
         number2=0;
         counter--;
         i=counter;
-        for(counter;counter>=0;counter--) number2+=number[counter]*Math.pow(10,i-counter);
-        counter++;
+        if(dNumber==0){
+            for(;counter>=0;counter--) number2+=number[counter]*Math.pow(10,i-counter);
+            counter++;
+        }
+        else{
+            for(;counter>=0;counter--) number2+=number[counter]*Math.pow(10,i-counter);
+            counter++;
+            for(y=0;y<i-dNumber+1;y++) number2/=10;
+            dNumber=0;
+        }
         var text=document.getElementById("t").value;
         text+="=";
         switch (way){
@@ -94,9 +112,39 @@
         }
         text+="\n";
         document.getElementById("t").value=text;
+        number1=number2=0;
     }
     function reClear(){
         document.getElementById("t").value="";
+        number1=number2=flag=dNumber=counter=x=0
+    }
+    function decimal() {
+        var text=document.getElementById("t").value;
+        text+='.';
+        document.getElementById("t").value=text;
+        dNumber=counter;
+    }
+    function deleteOne() {
+        var text=document.getElementById("t").value;
+        text=text.substring(0,text.length - 1);
+        document.getElementById("t").value=text;
+        if(flag!=0&&counter==0) {
+            if(x!=0) {
+                number1*=Math.pow(10,i-x+1);
+                number1=Math.floor(number1);
+            }
+            for(counter=i;counter>=0;counter--){
+                number[counter]=number1%10;
+                number1=(number1-number[counter])/10;
+            }
+            counter=i+1;
+            flag=0;
+            dNumber=x;
+        }
+        else{
+            number[counter]=0;
+            if(counter!=x&&counter!=dNumber) counter--;
+        }
     }
 </script>
 </body>

@@ -15,8 +15,8 @@ div.screen{
 }
 textarea.output{
     resize: none;
-    width: 300px;
-    height: 270px;
+    width:296px;
+    height: 266px;
     border: none;
     background-color: aliceblue;
     text-align:right;

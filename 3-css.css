@@ -1,0 +1,32 @@
+body {
+    background: black;
+    width: 432px;
+    height: 152px;
+}
+
+div {
+    border: 1px solid black;
+    background: white;
+}
+
+.avatar {
+    width: 128px;
+    height: 128px;
+    background: dodgerblue;
+    float: left;
+}
+
+.name {
+    width: 128px;
+    height: 20px;
+    float: right;
+    margin-right: 302px;
+
+}
+
+.profile {
+    width: 300px;
+    height: 150px;
+    background: palevioletred;
+    margin-left: 130px;
+}

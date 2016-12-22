@@ -74,6 +74,22 @@
         flag = 0;
         num[i][j] = number(1);
         document.getElementById("grid" + i + j).innerHTML = num[i][j];
+        changeColor(i,j);
+    }
+    function changeColor(i,j) {
+        switch (num[i][j]){
+            case 2:document.getElementById("grid"+i+j).style.backgroundColor="#EEE4DA";break;
+            case 4:document.getElementById("grid"+i+j).style.backgroundColor="#EDE0C8";break;
+            case 8:document.getElementById("grid"+i+j).style.backgroundColor="#F2B179";break;
+            case 16:document.getElementById("grid"+i+j).style.backgroundColor="#F59563";break;
+            case 32:document.getElementById("grid"+i+j).style.backgroundColor="#F67C5F";break;
+            case 64:document.getElementById("grid"+i+j).style.backgroundColor="#F65E3B";break;
+            case 128:document.getElementById("grid"+i+j).style.backgroundColor="#EDCF72";break;
+            case 256:document.getElementById("grid"+i+j).style.backgroundColor="#EDCC61";break;
+            case 512:document.getElementById("grid"+i+j).style.backgroundColor="#FFD934";break;
+            case 1024:document.getElementById("grid"+i+j).style.backgroundColor="#FFD934";break;
+            case 2048:document.getElementById("grid"+i+j).style.backgroundColor="#FFD934";break;
+        }
     }
     function isEmpty() {
         var a = 0;
@@ -108,8 +124,8 @@
     }
     function showOn() {
         for (i = 0; i < 4; ++i) {
-            for (j = 0; j < 4; ++j) if (num[i][j] != 0) document.getElementById("grid" + i + j).innerHTML = num[i][j].toString();
-            else document.getElementById("grid" + i + j).innerHTML = '';
+            for (j = 0; j < 4; ++j) if (num[i][j] != 0) {document.getElementById("grid" + i + j).innerHTML = num[i][j].toString();changeColor(i,j);}
+            else {document.getElementById("grid" + i + j).innerHTML = '';document.getElementById("grid"+i+j).style.backgroundColor="#CDC1B4";}
         }
         document.getElementById("score").innerHTML = iscore.toString();
     }

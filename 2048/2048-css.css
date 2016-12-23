@@ -3,7 +3,7 @@
     margin-left: auto;
     margin-right: auto;
     background-color:#FAF8EF;
-    height: 800px;
+    height: 830px;
 }
 .game{
     width:500px;
@@ -36,6 +36,16 @@ div.scoreNum{
     font-size: 24px;
     text-align: center;
 }
+div.new-game{
+    float: right;
+    background-color: #776E65;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+    width: 120px;
+    margin-right: 30px;
+    color: white;
+}
 div.game-container{
     width: 500px;
     height: 500px;
@@ -67,4 +77,47 @@ div.container-cell{
     line-height:106px;
     color: white;
     float: left;
+}
+div.game-button{
+    width: 500px;
+    height: 200px;
+}
+div.button-up{
+    height: 100px;
+    width: 100px;
+    margin-left: 203px;
+    background-color: #CDC1B4;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+div.button-letf{
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+    background-color: #CDC1B4;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+
+}
+div.button-down{
+    height: 100px;
+    width: 100px;
+    background-color: #CDC1B4;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+div.button-right{
+    height: 100px;
+    width: 100px;
+    background-color: #CDC1B4;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
 }

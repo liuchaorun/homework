@@ -13,9 +13,8 @@ app.use(async(ctx,next)=>{
 app
     .use(router.routes())
     .use(router.allowedMethods());
-app.use(async ctx=>{
+app.use(async ctx=> {
     console.log(ctx.custom_password);
     console.log(ctx.custom_username);
-
 });
 app.listen(3000);

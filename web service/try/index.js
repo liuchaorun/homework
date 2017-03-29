@@ -8,12 +8,3 @@ const usr = new a('postgres','postgres','postgres',{
     'port': 5432,
     'timestamp': true
 });
-let uses = usr.model('uses',{
-    id:{type:sequelize.number},
-    username:{type:sequelize.string},
-    password:{type:sequelize.string}
-}, {
-        freezeTableName: true
-    }
-);
-uses.create({username:'test',password:'asdfgh'});

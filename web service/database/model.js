@@ -1,25 +1,23 @@
 /**
  * Created by liuchaorun on 2017/3/29.
  */
-const config = require('./config');
-const Sequelize = require('sequelize');
-let sequelize = new Sequelize(config.database,config.username,config.password,{
-    host:config.host,
-    dialect:'postgres',
-    pool:{
-        max:5,
-        min:0,
-        idle:3000
-    }
-});
-sequelize.define('user',{
-    id:{
-        type:Sequelize.INTEGER,
-        primaryKey:true,
-        boolean:true
-    },
-    phoneNumber:Sequelize.STRING(11),
-    passWord:Sequelize.STRING(16)
-},{
-    timestamps:false
-});
+const fs = require('fs');
+const db = require('./database');
+
+let files = fs.readdirSync(__dirname + '/models');
+
+let js_files = files.filter((f)=>{
+    return f.endsWith('.js');
+}, files);
+
+module.exports = {};
+
+for (let f of js_files) {
+    console.log(`import model from file ${f}...`);
+    let name = f.substring(0, f.length - 3);
+    module.exports[name] = require(__dirname + '/models/' + f);
+}
+
+module.exports.sync = () => {
+    db.sync();
+};

@@ -12,10 +12,11 @@ let sequelize = new Sequelize(config.database,config.username,config.password,{
         idle:3000
     }
 });
-let User = sequelize.define('user',{
+sequelize.define('user',{
     id:{
-        type:Sequelize.NUMBER,
-        primaryKey:true
+        type:Sequelize.INTEGER,
+        primaryKey:true,
+        boolean:true
     },
     phoneNumber:Sequelize.STRING(11),
     passWord:Sequelize.STRING(16)

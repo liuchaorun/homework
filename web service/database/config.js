@@ -8,4 +8,5 @@ let config={
     host: 'localhost',
     port: 5432
 };
+
 module.exports=config;

@@ -3,6 +3,8 @@
  */
 const database = require("../database");
 module.exports=database.defineModel('users',{
-    phoneNumber:database.STRING(11),
+    phonenumber:{
+        type:database.STRING(11),
+        unique:true},
     password:database.STRING(16)
 });

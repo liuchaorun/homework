@@ -1,0 +1,60 @@
+span.line_m {
+    text-decoration: line-through
+}
+
+div.head {
+    text-align: center;
+}
+
+div.body {
+    margin-left: auto;
+}
+
+div.form1 {
+    margin-left: 33.333333%;
+}
+
+div.white {
+    height: 10px;
+}
+
+input.input {
+    display: block;
+    width: 50%;
+    height: 25px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input.submit {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+select.question{
+    display: block;
+    width: 52.5%;
+    height: 37px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

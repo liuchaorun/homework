@@ -3,7 +3,7 @@
  */
 const config = require('./config');
 const Sequelize = require('sequelize');
-const uuid = require('node-uuid');
+const uuid = require('uuid');
 function generateId() {
     return uuid.v4();
 }
@@ -36,11 +36,11 @@ function defineModel(name, attributes) {
         type: ID_TYPE,
         primaryKey: true
     };
-    attrs.createdAt = {
+    attrs.createdat = {
         type: Sequelize.BIGINT,
         allowNull: false
     };
-    attrs.updatedAt = {
+    attrs.updatedat = {
         type: Sequelize.BIGINT,
         allowNull: false
     };
@@ -81,12 +81,12 @@ function defineModel(name, attributes) {
                     if (!obj.id) {
                         obj.id = generateId();
                     }
-                    obj.createdAt = now;
-                    obj.updatedAt = now;
+                    obj.createdat = now;
+                    obj.updatedat = now;
                     obj.version = 0;
                 } else {
                     console.log('will update entity...');
-                    obj.updatedAt = now;
+                    obj.updatedat = now;
                     obj.version++;
                 }
             }

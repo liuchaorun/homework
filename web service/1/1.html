@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="jquery.js"></script>
+    <script src="1.js"></script>
+    <link rel="stylesheet" type="text/css" href="1.css"/>
+</head>
+<body>
+<span class="line_m"><hr></span>
+<div class="head">注册</div>
+<span class="line_m"><hr></span>
+<div class="body">
+    <form action="http://localhost:3000/action=login" role='form' method="post">
+        <div class="form1">
+            <label for="username">手机号：</label>
+            <input size="15" class="input" type="text" id="username" name="username"
+                   placeholder="11位手机号码">
+            <h><img src=" " height="18px" width="18px" id="img1"></h>
+        </div>
+        <div class="white"></div>
+        <div class="form1">
+            <label for="password">密码：</label>
+            <input size="15" class="input" type="password" id="password" name="password" onchange="checkPassWord()"
+                   placeholder="密码由5到16位字母或数字组成">
+            <h><img src="" height="18px" width="18px" id="img2"></h>
+        </div>
+        <div class="white"></div>
+        <div class="form1">
+            <label for="rePassword">确认密码：</label>
+            <input size="15" class="input" type="password" id="rePassword" name="rePassword"
+                   onchange="reCheckPassWord()"
+                   placeholder="确认密码">
+            <h><img src="" height="18px" width="18px" id="img3"></h>
+        </div>
+        <div class="white"></div>
+        <div style="text-align: center">
+            <input type="submit" value="注册" class="submit">
+            <input type="button" value="注册但不跳转" class="submit" onclick="postAjax()">
+        </div>
+        <div id="res"></div>
+    </form>
+</div>
+</body>
+</html>

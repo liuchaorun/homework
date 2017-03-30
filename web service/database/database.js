@@ -7,13 +7,13 @@ const uuid = require('node-uuid');
 function generateId() {
     return uuid.v4();
 }
-let sequelize = new Sequelize(config.database,config.username,config.password,{
-    host:config.host,
-    dialect:'postgres',
-    pool:{
-        max:5,
-        min:0,
-        idle:3000
+let sequelize = new Sequelize(config.database, config.username, config.password, {
+    host: config.host,
+    dialect: 'postgres',
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 3000
     }
 });
 const ID_TYPE = Sequelize.STRING(50);
@@ -101,7 +101,7 @@ let exp = {
     sync: () => {
         // only allow create ddl in non-production environment:
         if (process.env.NODE_ENV !== 'production') {
-            sequelize.sync({ force: true });
+            sequelize.sync({force: true});
         } else {
             throw new Error('Cannot sync() when NODE_ENV is set to \'production\'.');
         }

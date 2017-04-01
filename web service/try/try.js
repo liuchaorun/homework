@@ -7,13 +7,14 @@ const router = require('./router');
 const app = new koa();
 app.use(bodyParser());
 app.use(async(ctx,next)=>{
-    console.log("connecting>>>>>>>>>");
     await next();
 });
 app
     .use(router.routes())
     .use(router.allowedMethods());
 app.use(async ctx=>{
-    //ctx.response.message='failed';
+    console.log("aa");
 });
 app.listen(3000);
+
+

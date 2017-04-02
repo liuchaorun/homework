@@ -10,7 +10,9 @@
     "pg":"~6.1.5",
     "uuid": "~3.0.1",
     "md5": "~2.2.1",
-    "ect":"~0.5.9"
+    "ect":"~0.5.9",
+    "koa-session2":"~2.2.3",
+    "ioredis": "~2.5.0",
   },
   "devDependencies": {},
   "scripts": {

@@ -12,7 +12,7 @@
     "md5": "~2.2.1",
     "ect":"~0.5.9",
     "koa-session2":"~2.2.3",
-    "ioredis": "~2.5.0",
+    "ioredis": "~2.5.0"
   },
   "devDependencies": {},
   "scripts": {

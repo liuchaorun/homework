@@ -43,7 +43,7 @@ router.post('/action=login',async (ctx,next)=>{
         let md = md5(ctx.custom_username.toString());
         ctx.cookies.set(
             'user',
-            a,
+            md,
             {
                 domain: 'localhost',  // 写cookie所在的域名
                 path: '/',       // 写cookie所在的路径
